@@ -27,7 +27,8 @@ from bot.modules.connection import connect_button
 
 
 PM_START_TEXT = """
-*Hello* *{}*
+**Hai {},**
+
 *My name is* *{}*\n\n`You Can Add any kind of Filters to This Bot!`
 
 _Click Help button for more details_
@@ -52,7 +53,7 @@ def vercheck() -> str:
 
 
 SOURCE_STRING = """
-☹️*Sorry Broh*
+[Click Here 😃](https://t.me/nokiyirunnoippokitum)
 """
 
 
@@ -71,7 +72,7 @@ GDPR = []
 
 START_IMG = os.environ.get('START_IMG', None)
 if START_IMG is None:
-    img = "https://telegra.ph/file/fc734b227985a1524e715.jpg"
+    img = "https://telegra.ph/file/ecd145d33349d97956be5.jpg"
 else:
   img = START_IMG    
     
@@ -83,7 +84,7 @@ for module_name in ALL_MODULES:
     if not imported_module.__mod_name__.lower() in IMPORTED:
         IMPORTED[imported_module.__mod_name__.lower()] = imported_module
     else:
-        raise Exception("Can't have two modules with the same name! Please change one")
+        raise Exception("**Can't Have Two Modules With Same name! Please change one**")
 
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
@@ -158,7 +159,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             send_start(bot, update)
     else:
         update.effective_message.reply_text("Heya,{} Here..\nHow can I help you? 🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="⚙️Help",url="t.me/{}?start=help".format(bot.username))]]))
+                                                [[InlineKeyboardButton(text="🛠️ Help",url="t.me/{}?start=help".format(bot.username))]]))
 
 def send_start(bot, update):
     #Try to remove old message
